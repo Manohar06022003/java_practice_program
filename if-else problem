@@ -1,0 +1,22 @@
+package classobjects;
+import java.util.Scanner;
+
+public class find {
+	void oddoreven (int num1) 
+	{
+	
+		if(num1%2==0) {
+			System.out.println("it's even number");
+		}else {
+			System.out.println("it's odd number");
+		}
+	}
+	public static void main(String args[]) {
+		Scanner hari=new Scanner(System.in);
+		find mano=new find();
+		int a=hari.nextInt();
+		mano.oddoreven(a);
+		//System.out.println(b);
+	}
+
+}
