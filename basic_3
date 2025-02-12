@@ -1,0 +1,22 @@
+package practice;
+import java.util.Scanner;
+
+public class problem {
+	public static void main(String args[]) {
+	int a,b,c,d,e;
+	Scanner m = new Scanner(System.in);
+	
+	
+	a = m.nextInt();
+	b = m.nextInt();
+	
+	c = m.nextInt();
+	
+	d = a*b*c;
+	e = a+b+c;
+	
+	System.out.print(d/e);
+	System.out.print("my percentage is "+e/1+"/10");
+	}
+
+}
