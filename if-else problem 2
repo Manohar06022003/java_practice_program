@@ -1,0 +1,27 @@
+package classobjects;
+import java.util.Scanner;
+
+public class school {
+	int passorfail(int f) {
+		int h=f/5;
+		if(h>=35) {
+			System.out.println("pass");
+		}else {
+			System.out.println("fail");
+		}return h;
+	}
+	public static void main(String args[]) {
+		Scanner hari=new Scanner(System.in);
+		school mano=new school();
+		int a,b,c,d,e,f;
+		a=hari.nextInt();
+		b=hari.nextInt();
+		c=hari.nextInt();
+		d=hari.nextInt();
+		e=hari.nextInt();
+		f=a+b+c+d+e;
+		int per=mano.passorfail(f);
+		System.out .println(per);
+	}
+
+}
