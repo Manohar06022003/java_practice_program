@@ -1,0 +1,18 @@
+package programming;
+import java.util.Scanner;
+
+public class compartion {
+	public static void main(String args[]) {
+		Scanner hari =new Scanner(System.in);
+		
+		String meghana=hari.nextLine();
+		
+		if(meghana.equals("dead")) {//if we campare the string  we can use the "var name1.equals("var name 2" )"
+		System.out.print("surya meets ramya");
+		}
+		else
+		{System.out.println("surya wed meghana");
+		}
+	}
+		}
+// if we compare the integer we use the "=="
