@@ -1,0 +1,25 @@
+package voding_challenges;
+class counter{
+	static int a=0;
+	int number=0;
+
+counter(){
+	a=a+1;
+	number=number+1;
+}
+void disp() {
+	
+	System.out.println(+number);
+	System.out.println(+a);
+}
+}
+public class static_practice {
+	public static void main(String agrs[]) {
+		counter cr=new counter();
+		cr.disp();
+		counter c5=new counter();
+		c5.disp();
+		counter c=new counter();
+		c.disp();	}
+	
+}
