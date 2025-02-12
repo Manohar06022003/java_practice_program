@@ -1,0 +1,40 @@
+package voding_challenges;
+class person1{
+	public String name;
+	protected int age;
+	private String socailsecuritynumber;
+	 String address;
+	 person1(String name,int age,String socailsecuritynumber,String address ){
+		this.name=name;
+		this.age=age;
+		this.socailsecuritynumber=socailsecuritynumber;
+		this.address=address;
+	 }
+	 
+	 void hari() {
+		 System.out.println(socailsecuritynumber);
+	 }
+}
+class employee extends person1{
+	
+		employee(String name,int age,String socailsecuritynumber,String address ) {
+			super(name,age,socailsecuritynumber,address);
+			System.out.println("hey there");
+		}
+
+	
+}
+
+public class person {
+	public static void main(String args[]) {
+		
+		employee pr=new employee ("mano",22,"jhskjaf","chennai");
+		
+		System.out.println(pr.name);
+		System.out.println(pr.age);
+		pr.hari();
+		System.out.println(pr.address);
+		
+	}
+
+}
