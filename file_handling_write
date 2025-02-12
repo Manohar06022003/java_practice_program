@@ -1,0 +1,23 @@
+package voding_challenges;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+
+public class filewriter {
+	public static void main(String args[]) {
+		try {
+		FileWriter fw=new FileWriter("mano",true);//to write a small file 
+		BufferedWriter bf= new BufferedWriter(fw);// to write a large file
+		bf.newLine();
+		bf.append("hii mano");
+		bf.newLine();
+		bf.append("nice to meet you");
+		bf.close();
+		
+		System.out.println("success");
+	}
+		catch(Exception e) {
+		System.out.println(e);
+	}
+
+}
+}
