@@ -1,0 +1,18 @@
+package javabasics;
+import java.util.Scanner;
+class  Hi{
+	void display() {	
+	}	
+}
+public class HelloWorld {
+	public static void main(String args[]) {
+		int a,b;	
+		Scanner obj = new Scanner(System.in);// classname objname = new calssname();
+		
+		a = obj.nextInt(); // for geeting input as integer
+		b = obj.nextInt();
+		scan.nextLine();//use the Scanner function after the use of int opertor
+		String c = obj.nextLine();//for getting the input as a string
+		System.out.print(a+b);
+		}
+}
