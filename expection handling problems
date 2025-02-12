@@ -1,0 +1,36 @@
+package voding_challenges;
+import java.util.Scanner;
+class InvalidException extends Exception{
+	InvalidException(String s) {
+		super(s);
+	}
+}
+class agee{
+	void enter(int a) {
+		int age=a;
+		try {
+		if(age<=1 || age>=150) {
+			throw new InvalidException("an age is invalid");
+		}
+		else {
+			System.out.println("valid age");
+		}
+		}
+		catch(InvalidException e) {
+			System.out.println(e);
+		}
+		finally {
+			System.out.println("your Age is:"+age);
+		}
+	}
+	
+}
+public class custom_exception {
+	public static void main(String args[]) {
+		Scanner hari=new Scanner(System.in);
+		int a=hari.nextInt();
+		agee ag=new agee();
+		ag.enter(a);
+	}
+
+}
