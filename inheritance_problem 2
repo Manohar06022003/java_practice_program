@@ -1,0 +1,55 @@
+package classobjects;
+class animal_kingdom{
+	String name;
+	int age;
+	
+
+	void makessound(){
+	System.out.println("animal barks");
+	}
+	}
+	class dog extends animal_kingdom{
+		String breeding;
+		
+	
+		void makessound() {
+			System.out.println("dog barks");
+			
+		}
+	}
+	class cat extends dog{
+		String colour;
+		
+	
+		void makessound() {
+			System.out.println("meow moew");
+			
+		}void clumbing(){
+			System.out.println("cat is clumbing");
+		}
+	}
+	
+public class inherritance{
+	public static void main(String args[]) {
+		dog dg= new dog();
+		dg.breeding="doborman";
+		dg.name="tomy";
+		dg.age=2;
+		System.out.println(dg.breeding);
+		System.out.println(dg.name);
+		System.out.println(dg.age);
+		dg.makessound();
+		cat ct = new cat();
+		ct.breeding="busu busu";
+		ct.name="aadhi";
+		ct.age=1;
+		System.out.println(ct.breeding );
+		System.out.println(ct.name);
+		System.out.println(ct.age);
+		ct.colour="organge";
+		System.out.println(ct.colour);
+		ct.makessound();
+		ct.clumbing();
+	}
+		
+	}
