@@ -1,0 +1,11 @@
+package basics;
+import java.util.Scanner;
+public class fun {
+	public static void main(String args[]) {
+		int b;
+		Scanner a=new Scanner(System.in);
+		b=a.nextInt();
+		b=~b;
+		System.out.println(b);
+	}
+}
