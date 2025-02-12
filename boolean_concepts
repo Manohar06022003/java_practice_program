@@ -1,0 +1,15 @@
+package pracprogram;
+import java.util.Scanner;
+public class practice {
+	public static void main() {
+			int a,b;
+	Scanner math = new Scanner(System.in);	
+	a = math.nextInt();
+	b = math.nextInt();
+	{
+		String result=(a<b?"true":"false");
+	}
+	System.out.print(result);
+	}
+
+}
