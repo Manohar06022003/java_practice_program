@@ -1,0 +1,27 @@
+package classobjects;
+interface read{
+	void read();
+}
+interface write{
+	void write();
+}
+interface store{
+	void store();	
+}
+class file implements read ,write,store{	
+	public void store() {
+		System.out.println("how can i help you");		
+	}
+	public void write() {
+		System.out.println("how will you write your homework");
+			}
+	public void read() {
+		System.out.println("what the name of the book you read yesterday");
+	}
+	}
+public class multiple_inheritance {
+	public static void main(String args[]) {
+		file fl=new file ();
+		fl.write();
+	}
+}
