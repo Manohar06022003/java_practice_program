@@ -1,0 +1,27 @@
+package javabasics;
+import java.util.Scanner;
+
+public class Name {
+	public static void main(String args[]) {
+		Scanner hari = new Scanner(System.in);		
+		String a,b,c;
+		a = "red";
+		b = "yellow";
+		c = "green";
+		String d=hari.nextLine();
+		
+		if(d.equals(a))
+		{
+			System.out.print("stop");	
+		}
+		else if(d.equals(b))
+		{
+			System.out.print("ready");
+			
+		}
+		else if(d.equals(c))
+		{
+			System.out.print("go");
+		}	
+	}
+}
