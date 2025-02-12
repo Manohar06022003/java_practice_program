@@ -1,0 +1,27 @@
+package collection;
+import java.util.*;
+class employee{
+	void main(int i) {
+	}
+}
+
+public class arraylist {
+	public static void main(String args[]) {
+		ArrayList<Integer> al=new ArrayList<Integer> ();
+		al.add(9);
+		al.add(56);
+		for(int i=0;i<=10;i++) {
+			al.add(i);
+			al.set(5, 67);
+			//al.remove(4);
+		}			
+		System.out.println(al);
+		Iterator<Integer> i=al.iterator();
+		System.out.println(i.next()); 
+		while(i.hasNext())
+		{
+		System.out.println(i.next());
+		
+	}
+	} 
+}
