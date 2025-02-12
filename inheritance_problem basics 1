@@ -1,0 +1,19 @@
+package classobjects;
+public class INHERITANCE {
+	class a{
+		//void classs() {
+			int a=2;	}
+	class b extends a{
+		//void bases() {
+			int b=3;
+		}	
+	class k extends b{
+ 		//void classsss() {
+			int c=4;
+		}	
+	public static void main(String args[]) {
+		INHERITANCE mano=new INHERITANCE();
+				k hari=mano.new k();
+				System.out.println(hari.c);}
+
+}
