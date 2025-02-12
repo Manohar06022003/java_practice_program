@@ -1,0 +1,27 @@
+package access_modifier1;
+class ravi{
+	public int a=100;
+	private int b=300;
+	void hari() {
+		System.out.println(a);
+		System.out.println(b);
+	}
+}
+class mano extends ravi{
+	void manoj() {
+		System.out.println(a);
+		
+	}
+}
+
+public class teacher {
+	public static void main(String args[]) {
+	ravi rv=new ravi();
+		System.out.println(rv.a);
+		rv.hari();
+		mano mn=new mano();
+		System.out.println(mn.a);
+		
+	}
+	
+}
