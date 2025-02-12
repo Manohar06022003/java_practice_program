@@ -1,0 +1,17 @@
+package classobjects;
+
+public class parameterr {
+	void choco(int money) {
+		System.out.println(money);
+		System.out.println("dairy milk");
+	}void milk(int money){
+		System.out.println(money);
+		System.out.println("inji tea");
+	}
+	public static void main(String args[]) {
+		parameterr abc=new parameterr();
+		abc.choco(30);
+		abc.milk(20);
+		
+	}
+}
