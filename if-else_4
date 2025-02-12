@@ -1,0 +1,32 @@
+package javabasics;
+import java.util.Scanner;
+
+public class training {
+	
+	public static void main(String args[]) {
+		int salary,age;
+		
+		Scanner mano=new Scanner(System.in);
+		 
+		salary= mano.nextInt();
+		
+		age=mano.nextInt();
+		
+		if(salary<=20000 || age>=25)
+		{	
+			System.out.println("you are eligible");
+			int loan =mano.nextInt();
+			{
+				if(loan<=50000)
+				{
+					System.out.print("you are eligible");
+				}
+				else
+				{
+					System.out.print("maximum amout is 50000");
+				}
+			}
+		}
+		}
+
+}
