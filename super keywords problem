@@ -1,0 +1,30 @@
+package classobjects;
+class hari{
+	String name;
+		hari(String name){
+		this.name=name;
+		System.out.println(name);
+	}
+}
+	class employee extends hari{
+			 employee(String name){
+		         super(name);	
+		}
+	void details() {
+			String name ="hari";
+			int age=30;
+			String position="ceo";
+			System.out.println(name);
+			System.out.println(age);
+			System.out.println(position);
+		}
+	}
+public class superkey {
+	public static void main(String[] args) {
+		employee emp=new employee("mano");
+		
+		emp.details();
+			
+	}
+
+}
