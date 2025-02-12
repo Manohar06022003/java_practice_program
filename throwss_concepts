@@ -1,0 +1,21 @@
+package voding_challenges;
+class mano{
+	void main() throws Exception
+	{
+		int a=10/0;
+	}
+}
+
+public class throwss {
+	public static void main(String args[]) {
+		mano mn=new mano();
+		try
+		{
+		mn.main();
+	}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+
+	}
+}
