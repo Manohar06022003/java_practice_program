@@ -1,0 +1,42 @@
+package voding_challenges;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+class NozeroException extends Exception{
+	public NozeroException(String s){
+		super(s);
+	}
+}
+public class exception_handling {
+	public static void main (String args[]) {
+		int a,b,c;
+		c=0;
+		Scanner ab = new Scanner(System.in);
+		try {
+			a=ab.nextInt();
+			b=ab.nextInt();
+		    c=a/b;
+		//if(c<=0) {
+		throw new NozeroException("zero is not valaid  number please enter non zero number only");
+		//}
+		
+		}
+		catch(NozeroException e){
+			System.out.println(e);
+		}
+		catch(ArithmeticException e) {
+			System.out.println("arithmethic execption is handled"+e);
+	
+		}
+
+		catch(InputMismatchException e)
+		{
+			System.out.println("input mismatch execption is handled "+e);
+		}
+		finally {
+		if (c!=0) {
+			System.out.println("the value of c is:"+c);
+		}
+			}
+}
+}
+
