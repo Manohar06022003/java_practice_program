@@ -1,0 +1,42 @@
+package practice;
+
+import java.util.*;
+abstract class vehicle{
+	
+	abstract void drive();
+	final void startengine() {
+		
+		System.out.println("engine started");
+	}
+	static String getvehicle() {
+		return "generic vehicle";
+		
+	}
+	
+}
+class  car extends vehicle{
+
+	void drive() {
+		System.out.println("driven by the steering");
+	}
+}
+class bike extends vehicle{
+	
+	void drive() {
+		System.out.println("handle beer");
+	}
+}
+
+public class practice_class {
+		public static void main(String args[]) {
+			car cr=new car();
+			cr.drive();
+			cr.startengine();
+			System.out.println(vehicle.getvehicle());
+			bike bk=new bike();
+			bk.drive();
+			bk.startengine();
+			System.out.println(vehicle.getvehicle());
+			
+		}
+}
