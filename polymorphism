@@ -1,0 +1,34 @@
+package access_modifier1;
+import java.util.Scanner;
+class Car{
+	int start;
+	int ends;
+	Car(int start,int ends) {
+	this.start=start;
+	this.ends=ends;	
+		System.out.println(start);		
+	}
+	static void drivesCar() {
+		System.out.println("giim dabaku dam dam");
+	}
+}
+class Bike extends Car{
+	Bike(int start ,int ends){
+		super(start,ends);
+	}	
+    String b="mano";
+    String drivesBike(int a,String c) {    	
+    	int model_no =a;
+    	String model_name =c;
+    	String bike_design="good in look";
+    	return  bike_design;    	
+	}   
+}
+public class salary {	
+	public static void main(String[] args) {
+		Scanner miss = new Scanner(System.in);
+		Bike vg= new Bike(miss.nextInt(), miss.nextInt());		
+		System.out.println(vg.drivesBike(3,"model 123"));	
+		Car.drivesCar();
+	}
+}
