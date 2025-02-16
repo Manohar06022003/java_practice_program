@@ -1,0 +1,29 @@
+package practice_session;
+
+public class practice_1 {
+	public static void main(String[] args) {
+		int[] number= {2,3,5,6,7,8};
+		int even=0;
+		int odd=0;
+		for(int i=0;i<number.length;i++) 
+		
+		//for(int num:number)------> its an enhanced for loop ,syntax:for(datatype variable name:data collection)
+			{
+			int v=number[i];
+			if(v%2==0) {
+				even=even+v;		
+				}
+			else {
+				odd=odd+v;
+			}
+		}
+		if(even>odd) {
+			System.out.println("true");
+			}
+		else {
+			System.out.println("false");
+		}
+		
+	}
+
+}
