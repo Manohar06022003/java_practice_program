@@ -1,0 +1,20 @@
+package practice_session;
+import java.util.*;
+
+import java .util.Scanner;
+
+public class practice_8 
+{
+	public static void main(String args[]) {
+		
+		Scanner sc=new Scanner(System.in);
+		String S=sc.nextLine();
+		int start=sc.nextInt();
+		int end=sc.nextInt();
+		
+		String substring=S.substring(start,end);
+		System.out.println(substring.substring(0,1).toUpperCase()+substring.substring(1));
+		
+	}
+	
+}
