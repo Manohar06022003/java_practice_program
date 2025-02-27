@@ -1,0 +1,33 @@
+package practice_session;
+import java.util.*;
+import java.util.Scanner;
+
+public class practice_11 {
+	
+	static boolean getboolean(String A,String B) {
+		String AB =A.toLowerCase();
+		String BC=B.toLowerCase();
+		
+		char[]c=AB.toCharArray();
+		Arrays.sort(c);
+		char[]d=BC.toCharArray();
+		Arrays.sort(d);
+		boolean f=false;
+		if (c.equals(d)) {
+			f=true;
+		}
+		return f;
+		
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc =new Scanner(System.in);
+		String A= sc.nextLine();
+		String B =sc.nextLine();
+		
+		boolean check = getboolean(A,B);
+		System.out.println(check);
+		System.out .println((check)?"yes":"no");
+	}
+
+}
