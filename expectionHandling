@@ -1,0 +1,28 @@
+package practice_session;
+import java .util.*;
+import java.util.regex.*;
+import java.util.Scanner;
+
+public class practice_program11 {
+	public static void main(String []args) {
+		
+		Scanner sc=new Scanner(System.in);
+		int testcase=Integer.parseInt(sc.nextLine());
+		
+		
+		while(testcase>0) {
+			testcase--;
+			String pattern=sc.nextLine();
+						
+			try {
+				Pattern.compile(pattern);
+				System.out .println("valid");
+				
+			}
+			catch(PatternSyntaxException e)
+			{
+				System.out.println("invaild");
+			}	
+		}	
+	}
+}
