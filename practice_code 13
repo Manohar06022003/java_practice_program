@@ -1,0 +1,82 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+class Book {
+    private String title;
+    private String author;
+    private int year;
+
+   
+    public Book(String title, String author, int year) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
+    }
+
+   
+    public String getDetails() {
+        return "Title: " + title + ", Author: " + author + ", Year: " + year;
+    }
+}
+
+
+public class LibraryManagement {
+    private ArrayList<Book> books = new ArrayList<>();  // List to store books
+
+  
+    public void addBook(String title, String author, int year) {
+        Book newBook = new Book(title, author, year);
+        books.add(newBook);
+        System.out.println("Book added successfully!");
+    }
+
+   
+    public void displayBooks() {
+        if (books.isEmpty()) {
+            System.out.println("No books available in the library.");
+        } else {
+            System.out.println("\nBooks in the Library:");
+            for (Book book : books) {
+                System.out.println(book.getDetails());
+            }
+        }
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        LibraryManagement library = new LibraryManagement();
+        int choice;
+
+        do {
+            System.out.println("\nLibrary Management System");
+            System.out.println("1. Add Book");
+            System.out.println("2. Display Books");
+            System.out.println("3. Exit");
+            System.out.print("Choose an option: ");
+            choice = scanner.nextInt();
+            scanner.nextLine(); 
+
+            switch (choice) {
+                case 1:
+                   
+                    System.out.print("Enter book title: ");
+                    String title = scanner.nextLine();
+                    System.out.print("Enter author name: ");
+                    String author = scanner.nextLine();
+                    System.out.print("Enter publication year: ");
+                    int year = scanner.nextInt();
+                    library.addBook(title, author, year);
+                    break;
+                case 2:
+
+                    library.displayBooks();
+                    break;
+                case 3:
+                    System.out.println("Exiting the library system.");
+                    break;
+                default:
+                    System.out.println("Invalid choice! Please try again.");
+            }
+        } while (choice != 3);
+
+        scanner.close(); 
+    }
+}
