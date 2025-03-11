@@ -1,0 +1,42 @@
+package practice_session;
+import java.util.*;
+import java.lang.reflect.Array;
+import java.math.*;
+import java.util.Scanner;
+
+class mano{
+	
+	 static String hari(int[] arr) {
+		int arr_size=Array.getLength(arr);
+		System.out .println(arr_size);
+		for(int i=0; i<=arr_size;i++) {
+			if(arr_size%2==0) {
+				return"The given array is in even length";
+				
+			}
+			else {
+				return"The given array is in odd length";
+				
+			}
+		}
+		return null;
+		
+	}	
+}
+public class practice_15 {
+	public static void main(String args[]) {
+		Scanner sc=new Scanner(System.in);
+		System.out.print("enter the size of the array : ");
+		int n=sc.nextInt();
+		int[] arr=new int[n];
+		for (int j=0; j<n;j++) {
+			System.out.print("enter the "+j +" index value : ");
+			arr[j]=sc.nextInt();			
+		}
+		mano mn=new mano();
+
+		System.out .println(mn.hari(arr));
+		sc.close();
+	}
+
+}
