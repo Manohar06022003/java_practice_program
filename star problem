@@ -1,0 +1,27 @@
+package mano;
+import java.util.*;
+public class star_program {
+	static class star{ 
+		void fun(){
+		int i,j,k;
+		for(i=1;i<=1;i++) {
+			
+			for(j=1;j<=5;j++) {
+				
+				for(k=j;k<=5;k++) {
+					System.out.print(" ");
+		            System.out.print("*");
+		
+		}
+		System.out.println();
+	}
+	}
+	}
+		
+	}
+	public static void main(String[] args) {
+		 star st=new star();
+		st.fun();
+	}
+
+	}
