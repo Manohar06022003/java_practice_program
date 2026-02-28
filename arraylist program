@@ -1,23 +1,30 @@
 package practice_sec;
 import java.util.*;
 
-class max1 {
-	public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String s = sc.nextLine();
-     
-        if (sc.hasNext()){
-             String input=sc.nextLine();
-            String[]a = input.trim().split("[ !,?._'@]+");
-            ArrayList<String>listOfStrings =new ArrayList<String>(Arrays.asList(a));
-            System.out.println(listOfStrings.size());
-          
-          for(String str:listOfStrings){ 				//enhanced for loop:
-            System.out.println(str);
-        } 
-        }else{
-            System.out.println(0);
-        }        
-}
+class arraylist{
+	void print() {
+		 Scanner sc = new Scanner(System.in);
+		 //System.out.print("s= ");
+		 String s = sc.nextLine();	
+		 
+	        if (sc.hasNext()){
+	             String input=sc.nextLine();
+	            String[]a = input.trim().split("[ !,?._'@]+");
+	            ArrayList<String>listOfStrings =new ArrayList<String>(Arrays.asList(a));
+	            System.out.println(listOfStrings.size());
+	          
+	          for(String str:listOfStrings){ 				//enhanced for loop:
+	            System.out.println(str);
+	        } 
+	        }else{
+	            System.out.println(0);
+	        }        
+	}
 }
 
+class max1 {
+	public static void main(String[] args) {
+		arraylist array=new arraylist();
+		array.print();       
+}
+}
