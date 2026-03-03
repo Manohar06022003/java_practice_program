@@ -1,0 +1,68 @@
+package practice_sec;
+import java.util.*;
+
+class jager_array{
+	
+	void check() {
+		int a;
+		int b;
+		int c;
+		int array[][][] =new int [3][][];					//3D jager array explaination
+		array[0]=new int[3][];
+		array[1]=new int[2][];
+		array[2]=new int[4][];
+		array[0][0]=new int [1];
+		array[0][1]=new int [2];
+		array[0][2]=new int [3];
+		array[1][0]=new int [1];
+		array[1][1]=new int [2];
+		array[2][0]=new int [1];
+		array[2][1]=new int [2];
+		array[2][2]=new int [3];
+		array[2][3]=new int [4];
+		System.out.println(Arrays.deepToString(array));	
+		Scanner scan1=new Scanner(System.in);
+		
+		for(int i=0;i<=array.length-1;i++) {
+			for(int j=0;j<=array[i].length-1;j++) {
+				for(int k=0;k<=array[i][j].length-1;k++) {
+			System.out.print(" enter value of index " +(i+1) +"and " +(j+1) +" and "+(k+1) +"is : "); 
+			array[i][j][k]=scan1.nextInt();
+		}		
+	}
+		}
+		int odd=0;
+		int even=0;
+		
+		for(int i=0;i<=array.length-1;i++) {
+			for (int j=0;j<=array[i].length-1;j++) {
+				for(int k=0;k<=array[i][j].length-1;k++) {
+				
+			if (array[i][j][k]%2==0) {
+				even++;
+			}
+			else {
+				odd++;
+			}
+		}	
+			}
+}
+		System.out.println(Arrays.deepToString(array));				//used for show the 2D array (Arrays.deepToString(array name))
+		System.out.println("number of odd numbers : "+even);
+		System.out.println("number of odd numbers : "+odd);		
+	}
+}
+
+class max1 {
+	public static void main(String[] args) {
+      Scanner scan=new Scanner(System.in);
+      System.out.print(" enter input 1 : ");
+      int Input1=scan.nextInt();  
+      System.out.print(" enter input 2 : ");
+      int Input2=scan.nextInt();  
+      System.out.print(" enter input 3 : ");
+      int Input3=scan.nextInt();  
+      jager_array find=new jager_array();
+      find.check();
+}
+}
