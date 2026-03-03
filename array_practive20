@@ -1,0 +1,51 @@
+package practice_sec;
+import java.util.*;
+
+class jager_array{
+	
+	void check() {
+		int array1 ;
+		int array2;
+		Scanner scan=new Scanner(System.in);
+		System.out.print("enter the size of the array :");
+		array1=scan.nextInt();
+		array2=array1;
+		System.out.println(array2);
+		int []arr=new int [array1];
+		int []arr2=new int [array2];
+		
+		
+		for(int i=0;i<=arr.length-1;i++) {
+			System.out .print("enter the value of "+i +" is : ");
+			arr[i]=scan.nextInt();
+			
+		}
+		System.out.println(Arrays.toString(arr));
+		for(int i=0;i<=arr.length-1;i++)  {
+			
+			arr2[arr[i]]++;
+						
+		}
+		System.out.println(Arrays.toString(arr2));
+		int max=-1;
+		int seek=0;
+		for (int arra1:arr2) {
+			
+			if (arra1>=max) {
+				max=arra1;
+				seek++;
+				
+			}
+			
+		}
+		System.out.println(max);
+		System.out.println(seek);
+	}
+}
+class max1 {
+	public static void main(String[] args) {
+        
+      jager_array find=new jager_array();
+      find.check();
+}
+}
