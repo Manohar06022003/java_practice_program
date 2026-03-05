@@ -34,6 +34,12 @@ class Check2{
 		string.trimToSize();
 		System.out.println(string);
 		String str1=string.toString();
+if(str.equals(str1)) {
+			System.out.println("it is palindrome");
+		}
+		else {
+			System.out.println("it is not a palindrome");
+		}
 		return str1;
 		}
 	
