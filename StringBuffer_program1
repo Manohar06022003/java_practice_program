@@ -1,0 +1,32 @@
+package practice_sec;
+
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class string_concept {
+	
+	public static void main(String []args) {
+		Scanner scan=new Scanner(System.in);
+		StringBuffer string=new StringBuffer();
+		System.out.print(" enter the String : ");
+		string.append(scan.nextLine());
+		System.out.println(string);
+		System.out.println(string.capacity());
+		StringTokenizer token=new StringTokenizer(string.toString()," ,.");		// StringTokenizer are use to split the words in StringBuffer 
+		int i=0;
+		int j=0;
+		while(token.hasMoreTokens()) {
+			
+			token.nextToken();
+				i++;
+				j++;
+		}
+		System.out.println("no.of.spaces in words are :" +(i-1));
+		System.out.println("no.of.words :" +(j));
+		
+		//string.trimToSize();							//use to trim the memory size of the mutable string only
+		//System.out.println(string.capacity());			//use to calulate the capacity of stringbuffer memory in mutable string only
+	//	string.delete(0, 10);							// use to delete the characters in mutable string only
+	//	System.out.println(string);
+	}
+}
