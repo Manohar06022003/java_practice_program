@@ -1,0 +1,50 @@
+package practice_sec;
+
+import java.util.Scanner;
+
+class Check{
+	public int check1() {
+		Scanner scan= new Scanner(System.in);			
+		String s;
+		System.out.print("enter the string s : ");
+		s=scan.nextLine();
+		int count=0;
+		
+		for(int i=0;i<s.length();i++) {
+			if (s.charAt(i)=='o') {
+				count++;
+			}
+		}
+		return count;
+		
+	}
+	 
+}
+class Check2{
+	public String check1() {
+		Scanner scan= new Scanner(System.in);
+		StringBuffer string=new StringBuffer();
+		System.out.print(" enter the word : ");
+		String str=scan.nextLine();
+		int s=str.length();
+		for(int i=s-1;i>=0;i--) {
+			string.append(str.charAt(i));
+			
+		}
+		string.trimToSize();
+		System.out.println(string);
+		String str1=string.toString();
+		return str1;
+		}
+	
+}
+
+public class string_practice {
+	public static void main(String []args) {
+		Check ck=new Check();
+		System.out.println("no.of letter : "+ck.check1());
+		Check2 ck2=new Check2();
+		System.out.println(" reverse word of you entered word is : "+ck2.check1());
+	}
+
+}
