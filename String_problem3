@@ -1,0 +1,33 @@
+package practice_sec;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+class check2{
+	public int ckeck1() {
+		Scanner scan=new Scanner(System.in);
+		System.out.print("enter the number : ");
+		String str1=scan.nextLine();
+		String str2=str1.toLowerCase();
+		//StringTokenizer s=new StringTokenizer(str2,"aeiou");
+		int count=0;
+		for(int i=0;i<=str1.length()-1;i++) {
+			char ch=str2.charAt(i);
+		
+		     if(ch=='a' ||ch=='e' || ch=='i' || ch=='o' || ch=='u'){
+				count++;
+			}
+		}
+		return count;
+	}
+}
+public class classes {
+	public static void main(String []args ) {
+	check2 ck=new check2();
+	System.out.println("no.of vowels : "+ck.ckeck1());
+	
+}
+
+}
+
+
+
