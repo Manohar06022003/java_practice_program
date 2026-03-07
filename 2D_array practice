@@ -2,14 +2,18 @@ package practice_sec;
 import java.util.*;
 
 class Find_oddoreven{
+	private int a;
+	private int ab1;
+	Find_oddoreven(int arr, int arr1){
+		this.a=arr;
+		this.ab1=arr1;
+	}
 	
 	void check( int arr, int arr1) {
-		int arr= arr;
-		int arr1= arr1;
-		int array[][] =new int [arr][arr1];
+		int array[][] =new int [a][ab1];
 		System.out.println(Arrays.deepToString(array));	
 		Scanner scan1=new Scanner(System.in);
-		System.out.println(arr +" ,"+arr1);
+		System.out.println(a +" ,"+ab1);
 		for(int i=0;i<=array.length-1;i++) {
 			for(int j=0;j<=array[i].length-1;j++) {
 			System.out.print(" enter value of index " +(i+1) +"and " +(j+1) +" is :"); 
@@ -43,7 +47,7 @@ class max1 {
       int Input1=scan.nextInt();  
       System.out.print(" enter input 2 : ");
       int Input2=scan.nextInt();      
-      Find_oddoreven find=new Find_oddoreven();
-      find.check(Input1,Input2);
+      Find_oddoreven find=new Find_oddoreven(Input1,Input2);
+      find.check();
 }
 }
