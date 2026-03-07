@@ -4,12 +4,12 @@ import java.util.*;
 class Find_oddoreven{
 	
 	void check( int arr, int arr1) {
-		int a= arr;
-		int b= arr1;
-		int array[][] =new int [a][b];
+		int arr= arr;
+		int arr1= arr1;
+		int array[][] =new int [arr][arr1];
 		System.out.println(Arrays.deepToString(array));	
 		Scanner scan1=new Scanner(System.in);
-		System.out.println(a +" ,"+b);
+		System.out.println(arr +" ,"+arr1);
 		for(int i=0;i<=array.length-1;i++) {
 			for(int j=0;j<=array[i].length-1;j++) {
 			System.out.print(" enter value of index " +(i+1) +"and " +(j+1) +" is :"); 
@@ -20,7 +20,7 @@ class Find_oddoreven{
 		int even=0;
 		
 		for(int i=0;i<=array.length-1;i++) {
-			for (int j=0;j<=array[j].length-1;j++) {
+			for (int j=0;j<=array[i].length-1;j++) {
 				
 			if (array[i][j]%2==0) {
 				even++;
