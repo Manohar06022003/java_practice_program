@@ -1,0 +1,39 @@
+package practice_sec;
+
+import java.util.Scanner;
+
+class calculator{
+	public int two(int a,int b) {
+		int c=a+b;
+		return c;
+	}
+
+	public int two(int a,int b, int d) {
+	int c=a+b+d;
+	return c;
+}
+	public double two(double a,double b) {
+		double c=a+b;
+		return c;
+	}
+}
+
+public class OOPs_concept {
+	public static void main (String []args) {
+		calculator calc= new calculator();
+		Scanner scan= new Scanner(System.in);
+		System.out.print("enter the valuue of a : ");
+		int a = scan.nextInt();
+		System.out.print("enter the valuue of b : ");
+		int b=scan.nextInt();
+		System.out.print("enter the valuue of c : ");
+		int c = scan.nextInt();
+		System.out.print("enter the valuue of e : ");
+		double e=scan.nextDouble();
+		System.out.print("enter the valuue of f : ");
+		double f=scan.nextDouble();
+		System.out.println(calc.two(a,b));
+		System.out.println(calc.two(a,b,c));
+		System.out.println(calc.two(e,f));		
+	}
+}
