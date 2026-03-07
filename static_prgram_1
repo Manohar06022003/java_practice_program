@@ -1,0 +1,26 @@
+package practice_sec;
+
+import java.util.Scanner;
+
+class calculation{
+	private static float radius;
+	private static float pi=3.14f;
+	private static float area;
+	
+	calculation(float radius){
+		this.radius=radius;
+	}	
+	public float calc() {
+		area=pi*radius*radius;
+		return area;
+	}
+}
+public class static_concept {
+	public static void main(String [] args) {
+		Scanner scan =new Scanner(System.in);
+	    System.out.print("Enter the value of radius : ");
+	    float radius=scan.nextFloat();
+		calculation calc=new calculation(radius);
+		System.out.println("The value of the area is : "+calc.calc());
+	}
+}
