@@ -1,0 +1,68 @@
+package practice_sec;
+
+import java.util.Scanner;
+
+class Student{
+	String Name;
+	long roll_no;
+	 Student(String name,long roll_no){
+		 this.Name=name;
+		 this.roll_no=roll_no;
+	 }
+	void displayStudent() {
+		System.out.println("Name : "+Name);
+		System.out.println("roll_no : "+roll_no);
+	}
+}
+class Marks extends Student{
+	int m1,m2,m3;
+	Marks(String name, long roll_no) {
+		super(name, roll_no);
+		Scanner scan=new Scanner(System.in);
+		System.out.print(" enter the mark m1 : ");
+		this. m1=scan.nextInt() ;
+		System.out.print(" enter the mark m2 : ");
+		this. m2=scan.nextInt() ;
+		System.out.print(" enter the mark m3 : ");
+		this. m3=scan.nextInt() ;		
+	}
+		
+	public int calc() {
+		System.out.println(" Mark m1 : "+m1);
+		System.out.println(" Mark m2 : "+m2);	
+		System.out.println(" Mark m3 : "+m3);
+		int Total= m1+m2+m3;
+		System.out.println("your total marks is : "+Total);
+		return Total;
+	}
+}
+class Result extends Marks{
+	Result(String name, long roll_no) {
+		super(name, roll_no);
+
+	}
+	public boolean view_result(int Total) {
+		
+		if (Total>=150) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}	
+}
+
+public class Inheritance_problems_1 {
+	public static void main (String []args) {
+		Result calc=new Result("Mano",56758878);
+		calc.displayStudent();
+		int Total=calc.calc();
+		System.out.println(" The return is "+calc.view_result(Total));
+		if(calc.view_result(Total)) {
+			System.out.println("Congrats ,You are PASS");
+		}
+		else {
+			System.out.println("Sorry ,You are FAIL");
+		}
+	}
+}
