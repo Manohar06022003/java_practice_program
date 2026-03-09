@@ -1,0 +1,40 @@
+package practice_sec;
+class Animals_type{
+	static void animal(Animal a) {
+		a.breath();
+		a.eat();
+		a.foodhabits();
+	}
+}
+class Animal{
+	  void breath() {
+		System.out.println("breath oxygen");							
+	}
+	  void eat() {
+		  System.out.println("herbivours or carnivors or omnivours");
+	  }
+	  void foodhabits() {
+		  System.out.println("veg and non-veg");
+	  }
+}
+class bear extends Animal{
+	void eat() {
+		System.out.println("omnivours");
+	}	
+}
+class tiger extends Animal {
+	void eat() {
+		System.out.println("carnivorus");
+	}
+}
+
+public class Inheritance_problem2 {
+	public static void main(String []args) {
+		tiger t=new tiger();			// tight coupling
+		bear b=new bear();
+		Animals_type.animal(t);						// creating the ref for the parent class 
+		Animals_type.animal(b);											//and assing the child object to the parent ref to archieve the loose coupling (for polymorphism)
+		
+	}
+
+}
