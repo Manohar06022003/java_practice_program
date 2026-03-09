@@ -1,0 +1,50 @@
+package practice_sec;
+
+class os{
+	private String os_name;
+	private int SSD;
+	private int RAM;
+	 os(String os_name, int SSD, int RAM) {
+		super();
+		this.os_name = os_name;
+		this.SSD = SSD;
+		this.RAM = RAM;
+	}
+	void Get_detail() {
+		System.out.println("os_name :" +os_name);
+		System.out.println("SSD :"+ SSD);
+		System.out.println("RAM :"+ RAM);
+	}
+	
+}
+class charger{
+	int voltage;
+	String typeCable;
+	 charger(int voltage, String typeCable) {
+		this.voltage = voltage;
+		this.typeCable = typeCable;
+	}
+	void getVoltage() {
+		System.out.println("voltage :" + voltage);
+	}
+	
+	void getTypeCable() {
+		System.out.println("typeCable :"+ typeCable);
+	}	
+}
+class mobile{
+	os o=new os("Android", 128, 16);
+	void hasA(charger ch) {							// hasA(class object reference) 
+		ch.getVoltage();
+		ch.getTypeCable();
+	}
+}
+public class inheritance_problem3 {
+	public static void main(String []args) {
+		mobile m= new mobile();
+		charger ch= new charger(44,"C_type");
+		m.o.Get_detail();
+		m.hasA(ch);
+	}
+
+}
