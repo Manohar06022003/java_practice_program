@@ -5,9 +5,9 @@ import java.util.Scanner;
 class Check{
 	public int check1() {
 		Scanner scan= new Scanner(System.in);			
-		String s;
+		
 		System.out.print("enter the string s : ");
-		s=scan.nextLine();
+		String s=scan.nextLine();
 		int count=0;
 		
 		for(int i=0;i<s.length();i++) {
@@ -24,7 +24,7 @@ class Check2{
 	public String check1() {
 		Scanner scan= new Scanner(System.in);
 		StringBuffer string=new StringBuffer();
-		System.out.print(" enter the word : ");
+		System.out.print(" enter the words : ");
 		String str=scan.nextLine();
 		int s=str.length();
 		for(int i=s-1;i>=0;i--) {
