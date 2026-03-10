@@ -6,7 +6,7 @@ abstract class vehicle{
 		
 		System.out.println("engine started");
 	}
-	static String getvehicle() {
+	static String getvehicle() {	// in abstract class we can access the static method 
 		return "generic vehicle";
 		
 	}
