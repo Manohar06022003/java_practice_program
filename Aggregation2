@@ -1,0 +1,42 @@
+package aggregation;
+
+class organs{
+	private String brain;
+	private String heart;
+	
+	public organs(String brain, String heart) {
+		this.brain = brain;
+		this.heart = heart;
+	}
+	void function() {
+		System.out.println("if you don't have a "+brain +" ,you can't be think of anything");
+		System.out.println("if you don't have a "+heart +" ,you can't be survive");
+	}	
+}
+class usedThings{
+	private String bike_name;
+	private int Books_Count;
+	public usedThings(String bike_name, int books_Count) {
+		super();
+		this.bike_name = bike_name;
+		this.Books_Count = books_Count;
+	}	
+	void thingDetails() {
+		System.out.println("bike name : "+bike_name);
+		System.out.println("no.of.books : "+Books_Count);
+	}
+}
+class mano{
+	organs organ=new organs("brain", "heart");
+	void hasA( usedThings UT) {
+		UT.thingDetails();
+	}
+}
+public class aggregation2 {
+	public static void main(String []args) {
+		 mano mn=new mano();
+		 usedThings UT= new  usedThings("Duke 150", 30);
+		 mn.organ.function();
+		 mn.hasA(UT);
+	}
+}
