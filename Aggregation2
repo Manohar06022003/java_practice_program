@@ -28,7 +28,7 @@ class usedThings{
 }
 class mano{
 	organs organ=new organs("brain", "heart");
-	void hasA( usedThings UT) {
+	void hasAthings( usedThings UT) {
 		UT.thingDetails();
 	}
 }
@@ -37,6 +37,6 @@ public class aggregation2 {
 		 mano mn=new mano();
 		 usedThings UT= new  usedThings("Duke 150", 30);
 		 mn.organ.function();
-		 mn.hasA(UT);
+		 mn.hasAthings(UT);
 	}
 }
