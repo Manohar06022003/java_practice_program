@@ -34,7 +34,11 @@ public class Inheritance_problem2 {
 		bear b=new bear();
 		Animals_type.animal(t);						// creating the ref for the parent class 
 		Animals_type.animal(b);											//and assing the child object to the parent ref to archieve the loose coupling (for polymorphism)
-		
+		//Animal a=new Animal();
+		Animal a;
+		a=b;
+		((bear)(a)).eat();					// down casting for archieving the polymorphism"((child class name)(parent ref)).method)."
 	}
 
 }
+
