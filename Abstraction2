@@ -1,0 +1,88 @@
+package com.Abstraction;
+
+import java.util.Scanner;
+
+class Shape{
+	 static void Show(Calculations c) {
+		c.acceptInput();
+		c.calculate();
+		c.display();
+	}
+}
+
+abstract class Calculations{
+	abstract void acceptInput();
+	abstract void calculate();
+	abstract void display();
+//	static  String get() {				// in abstract class we can access the static method 
+//		return "genreiv"; 
+//	}
+//final void startengine() {			//"final method"can use in abstract method
+//		
+//		System.out.println("engine started");
+//	}
+}
+ class Square extends Calculations{
+	 Scanner scan=new Scanner(System.in);
+	 private int Square,s,a;
+	public void acceptInput() {	
+		System.out.println("Calculation of Square");
+		System.out.print("Enter a number s :");
+		s=scan.nextInt();
+		System.out.print("Enter a number a :");
+		a=scan.nextInt();
+	}
+	public void calculate() {
+		Square=s*a;
+	}
+	public void display() {
+		System.out.println("Square size : "+Square);
+	}
+ }
+ class Rectangle extends Calculations{
+	 Scanner scan=new Scanner(System.in);
+	 private int Rectangle,l,b;
+	public void acceptInput() {	
+		System.out.println("Calculation of Rectangle");
+		System.out.print("Enter a number l :");
+		l=scan.nextInt();
+		System.out.print("Enter a number b :");
+		b=scan.nextInt();
+	}
+	public void calculate() {
+		Rectangle=l*b;
+	}
+	public void display() {
+		System.out.println("rectangle size : "+Rectangle);
+	}
+ }
+  class Circle extends Calculations{
+	 Scanner scan=new Scanner(System.in);
+	 private int r;
+	 private float  Circle;
+	 private float pi=3.14f;
+	public void acceptInput() {	
+		System.out.println("Calculation of Circle");
+		System.out.print("Enter a number r :");
+		r=scan.nextInt();
+	
+	}
+	public void calculate() {
+	Circle=pi*r*r;
+	}
+	public void display() {
+		System.out.println("Circle size : "+Circle);
+	}
+ }
+ 
+public class Abstraction2 {
+	public static void main(String []args ) {
+		Square sq=new Square();
+		Rectangle RA= new Rectangle();
+		Circle cr=new Circle();
+		Shape sp=new Shape();
+		sp.Show(sq);
+		sp.Show(RA);
+		sp.Show(cr);
+	}
+}
