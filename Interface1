@@ -1,0 +1,67 @@
+package Interface;
+
+import java.util.Scanner;
+
+class Get{
+	static void getValue(Calculators cal){			//upcasting for polymorphism
+		System.out.println(cal.add());
+		System.out.println(cal.sub());
+		System.out.println(cal.mult());
+		System.out.println( ((Calculator1) cal).div());			//down casting cannot 
+		System.out.println();
+	}
+}
+
+interface Calculators{
+	public int add();
+	public int sub();
+	public int mult();
+	public static final int a=0;		//abstract and canstant variable till java 7
+//	default void mul() {				//new update in java "default void method name" in java 8		
+//	}
+//	static void mull() {				//new update in java "static void method name" in java9
+//		
+//	}
+//	private void mulll() {				////new update in java "private void method name" in java9
+//		
+//	}
+	//public float div();
+}
+class Calculator1 implements Calculators{
+	int a ,b,c;
+	
+	Calculator1(int a,int b){
+		this.a=a;
+		this.b=b;
+	}
+	public int add() {
+		c=a+b;
+		return c;
+	}
+	public int sub() {
+		c=a-b;
+		return c;
+	}
+	public int mult() {
+		c=a*b;
+		return c;
+	}	
+	public float div() {
+		c=a/b;
+		return c;
+	}
+}
+public class Interface1 {
+	public static void main(String []args) {
+		Scanner Scan=new Scanner(System.in);
+		int a,b;
+		System.out.print("Enter value of a : ");
+		a=Scan.nextInt();
+		System.out.print("Enter value of b : ");
+		b=Scan.nextInt();
+		//Calculators clacc=new Calculator1(a, b);
+		Calculator1 calc= new Calculator1(a,b);		
+		Get.getValue(calc);
+		//calc.div();
+	}
+}
