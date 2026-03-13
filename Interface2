@@ -1,0 +1,115 @@
+package Interface;
+
+import java.util.Random;
+import java.util.Scanner;
+import java.util.Stack;
+class Details{
+	void view( showTranscationDetails show) {
+		show.pay();
+		show.refund();
+		show.showTranscationDetails();
+	}
+}
+interface payment{
+	public void pay();
+	public void refund();
+}
+interface showTranscationDetails extends payment{
+	public void showTranscationDetails();
+	}
+class CreditCardPayment implements  showTranscationDetails {
+	
+	private String Tranaction_ID;
+	private String User_name= "Mano";
+	private double Balance=50000;
+	Scanner scan=new Scanner(System.in);
+	 void transaction() {
+		Random random=new Random();
+		 Tranaction_ID=String.format("%06d", random.nextInt(1000000));
+	}	
+	public void pay()  {
+		System.out.println("----CreditCard_Transaction----");
+		System.out.print("\nenter the amount of transaction : ");
+		int payment=scan.nextInt();
+		if(payment>=Balance) {
+			System.out.println("Invalid Amount, Try again later");
+		}
+		else {
+			Balance=Balance-payment;
+			transaction();
+			System.out.println("Transaction Successful");			
+		}
+	}
+	public void refund() {
+		System.out.print("Enter the amount of refund : ");
+		double amount=scan.nextInt();
+		if(amount>=Balance) {			
+			System.out.println("Invalid Amount, Try again later");
+		}
+		else {
+			Balance=Balance+amount;
+			transaction();
+			System.out.println("Refund is completed");
+		}		
+	}
+	public void showTranscationDetails() {
+		System.out.println("\n----Transcation Details----");
+		System.out.println("User Name : "+User_name);
+		System.out.println("Tranaction_ID : "+Tranaction_ID);
+		System.out.println("Balance : "+Balance );
+		System.out.println("-----------------------------");
+	}
+}
+class UPIPayment  implements  showTranscationDetails{
+	private String Tranaction_ID;
+	private String User_name="UPI_user";
+	private double Balance=10000;
+	Scanner scan=new Scanner(System.in);
+	void transaction() {
+		Random random=new Random();
+		 Tranaction_ID=String.format("%06d", random.nextInt(1000000));
+	}	
+	public void pay()  {
+		System.out.println("----UPI_Transaction----");
+		System.out.print("\nenter the amount of transaction : ");
+		int payment=scan.nextInt();
+		if(payment>=Balance) {
+			System.out.println("Invalid Amount, Try again later");
+		}
+		else {
+			Balance=Balance-payment;
+			transaction();
+			System.out.println("Transaction Successful");			
+		}
+	}
+	public void refund() {
+		Scanner scan=new Scanner(System.in);
+		System.out.print("Enter the amount of refund : ");
+		double amount=scan.nextInt();
+		if(amount>=Balance) {			
+			System.out.println("Invalid Amount, Try again later");
+		}
+		else {
+			Balance=Balance+amount;
+			transaction();
+			System.out.println("Refund is completed");
+		}		
+	}
+	public void showTranscationDetails() {
+		System.out.println("\n----Transcation Details----");
+		System.out.println("User Name : "+User_name);
+		System.out.println("Tranaction_ID : "+Tranaction_ID);
+		System.out.println("Balance : "+Balance );
+		System.out.println("-----------------------------");
+	}
+}
+public class Interface2 {
+	public static void main(String []args) {
+		 CreditCardPayment Credit=new CreditCardPayment();
+		 UPIPayment UPI=new  UPIPayment ();
+		 Details det=new Details();	
+		 det.view(Credit);
+		 det.view(UPI);
+	}
+}
+
