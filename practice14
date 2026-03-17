@@ -1,0 +1,47 @@
+package com.vengi;
+
+import java.util.Scanner;
+
+class customerDetails{
+	public String name;
+	public int Watt;
+	public customerDetails(String name, int watt) {
+		this.name = name;
+		this.Watt  = watt;
+	}
+	void GettingInfo() {
+		System.out.println("customer Name : "+name);
+		System.out.println("Customer asked watt : "+Watt);
+	}
+}
+class Electricity extends  customerDetails {
+	public Electricity(String name, int watt) {
+		super(name, watt);
+	}
+	int KiloWatt=10000;
+	int KiloWatt1=5000;
+	void Fetching() {
+		if(Watt>=KiloWatt) {
+			System.out.println("High priority client");
+		}
+		else if(Watt>=5000 ){
+			System.out.println("medium priority");
+		}
+		else {
+			System.out.println("Low priority");
+		}
+	}
+}
+
+public class Electrical {
+	public static void main(String []args) {
+		Scanner scan=new Scanner(System.in);
+		System.out.print("Enter the name of Customer : ");
+		String name=scan.nextLine();
+		System.out.print("Enter the Watt he wants : ");
+		int Watt=scan.nextInt();		
+		Electricity elec=new Electricity(name,Watt);
+		elec. GettingInfo() ;
+		elec.Fetching();
+	}
+}
