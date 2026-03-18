@@ -1,0 +1,83 @@
+package com.ExceptionHandling;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+interface Account{
+	public void deposits();
+	public void withdraw();
+	public void transfer();
+}
+class savingsAccount implements Account{
+	private String Name="Mano";
+	private long Acc_no=29374683778577L;
+	private long Acc_Balance=0;
+	Scanner scan=new Scanner(System.in);
+	public void deposits() {
+	try {
+		System.out.print("Enter the depositAmount: ");
+		long depositAmount=scan.nextLong();
+		if(depositAmount>0) {
+		Acc_Balance=Acc_Balance+depositAmount;
+		System.out.println("Amount deposited successfully");
+		System.out.println("Avaible balance : "+Acc_Balance);
+		}
+		else {
+			System.out.println("Negative Amount cannot be deposited");
+		}
+	}
+		catch(InputMismatchException e) {
+			System.out.println("Amount must be in integer");
+		}
+	}
+	public void  withdraw() {
+		try {
+			System.out.print("Enter the WithdrawAmount: ");
+			long withdraw=scan.nextLong();
+			if (Acc_Balance>=withdraw) {
+			Acc_Balance=Acc_Balance-withdraw;
+			System.out.println("withdraw completed");
+			System.out.println("Your Available balance : "+Acc_Balance);
+			}
+			else {
+				System.out.println("Insufficent balance");
+			}
+	}
+		catch(InputMismatchException a){
+			System.out.println("Amount must be in integer");
+		}
+	}
+	public void transfer() {
+		
+		try {
+			System.out.print("Enter the Account_no. : ");
+			long Account_no=scan.nextLong();
+			System.out.print("Enter the Amount: ");
+			long Amount=scan.nextLong();
+			if (Amount<=Acc_Balance && Amount >0) {
+			Acc_Balance=Acc_Balance-Amount;
+			System.out.println("transaction completed");
+			System.out.println("Amount transfed to "+Account_no+" holder");
+			System.out.println("Your Available balance : "+Acc_Balance);
+			}
+			else {
+				System.out.println("Insufficent balance");
+			}
+		}
+		catch(InputMismatchException w) {
+			System.out.println("Amount must be in integer");
+		}
+	}
+	
+	
+}
+public class ExceptionHandling1 {
+	public static void main(String []args) {
+		Scanner scan=new Scanner (System.in);		
+		savingsAccount save=new savingsAccount();
+		save.deposits();
+		save.withdraw();
+		save.transfer();
+	}
+
+}
