@@ -1,0 +1,97 @@
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+class Overall{
+	void verifys(ATM atm) {
+		atm.acceptInput();
+		atm.verify();
+	}
+}
+class InvalidPinException extends Exception {
+     InvalidPinException() {
+        super("PIN must be exactly 4 digits");
+    }
+}
+class AccountNumberException extends Exception{
+	AccountNumberException (){
+		super("Account number must be 12 digits");
+	}
+}
+class ATM{
+	String Acc_no="123456789012";
+	private String pass="9999";
+	String checkPass;
+	public static int attempt=0;
+	String checkAcc;
+	final int max=3;
+	Scanner scan =new Scanner(System.in);
+	void acceptInput() {
+		
+		try {
+		System.out.print("Enter the Account number : ");
+		checkAcc=scan.nextLine();
+		if(!checkAcc.matches("\\d{12}")) {
+			throw new AccountNumberException ();
+		}
+		
+		System.out.print("Enter the password : ");
+		checkPass=scan.nextLine();
+		if (!checkPass.matches("\\d{4}")) {
+			  throw new InvalidPinException ();
+		}
+		}
+		catch(InputMismatchException h) {
+			System.out.println("Enter only numbers in Acc_number");
+		}
+		catch(ArithmeticException e){
+			System.out.println("Enter the positive number only");
+		}
+		catch(InvalidPinException f) {
+			System.out.println(f.getMessage());			//.getMessage() it is in build method in exception.
+		}
+		catch(AccountNumberException z) {
+			System.out.println(z.getMessage());
+		}
+		catch(Exception b) {
+			System.out.println(" Something Wrong,Please try again later.");
+		}
+	}
+	void verify() {	
+		
+		for (int i=1;i<=max;i++) {
+			
+			if (pass.equals(checkPass) && checkAcc==Acc_no) {
+				System.out.println("transaction completed");
+				break;
+			}
+			
+			else if (checkAcc!=Acc_no) {
+				System.out.println("Account number is incorrect");
+			}
+			else{
+				System.out.println("Account password is incorrect.\nplease try again");
+			}
+			
+			if(i==max) {
+				System.out.println("Account locked after 3 attempts 🚫");
+				System.exit(0);
+			}
+			else {
+			acceptInput();
+			}
+		}
+		}		
+}
+class Bank extends Overall{
+	void initiate() {
+		ATM atm=new ATM();
+		Overall OV=new Overall();
+		OV.verifys(atm);
+	}
+}
+public class ExceptionHandling2 {
+	public static void main(String[] args) throws InvalidPinException {
+		Bank bank=new Bank();
+		bank.initiate();
+	}
+}
