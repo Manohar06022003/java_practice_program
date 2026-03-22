@@ -1,0 +1,75 @@
+package com.ExceptionHandling;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+class WrongAgeException extends Exception{
+	WrongAgeException(){
+		super("Wrong input, Age should be in positive 😊.Please try again");
+	}
+}
+class AgeLimitException extends Exception{
+	AgeLimitException(){
+		super("Your age should be above 18 or below 60");
+	}
+}
+class getInformation{
+	String Name;
+	int age;
+	int minAge=18;
+	int maxAge=60;
+	Scanner scan= new Scanner(System.in);
+	void getInfo() {
+		try {			
+		System.out.print("Enter name: ");
+		Name=scan.nextLine();
+		String demo=Name.toLowerCase();
+		System.out.print("Enter your age : ");
+		age=scan.nextInt();
+		if(!demo.matches("[a-z]+")){
+			throw new InputMismatchException();
+		}
+		else if (age<=0) {
+			throw new WrongAgeException();
+		}
+	}
+		catch(InputMismatchException a) {
+			System.out.println(" Name should be in Alphabets ");
+			System.exit(0);
+		}
+		catch(WrongAgeException c) {
+			System.out.println(c.getMessage());			//inbuild method inside the exception class
+		}
+		catch (Exception b) {
+			System.out.println("Something wrong ,Please again");
+			System.exit(0);
+		}
+		
+	}
+	void verify() throws AgeLimitException {
+		if (minAge <= age && maxAge >= age) {
+			System.out.println("You are eligible for Driving lisence");
+			System.exit(0);
+		}
+		else {
+			throw new AgeLimitException();
+		}
+	}
+}
+class RTO{
+	void check() {
+		getInformation get=new getInformation();
+		get.getInfo();
+		try {
+			get.verify();
+		} catch(AgeLimitException e){
+			System.out.println(e.getMessage());
+		}
+	}	
+}
+public class ExceptionHandling3 {
+	public static void main(String[] args) {
+		RTO rto=new RTO();
+		rto.check();
+	}
+
+}
