@@ -1,0 +1,72 @@
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+class PositiveNumberException extends Exception{
+	PositiveNumberException(){
+		super("only positive size of array are exists");
+	}
+}
+class Array{
+	
+	int[] array;
+	int count=0;
+	Array(int []array){
+		this.array=array;
+	}
+	
+	boolean checkCondition() {
+		int arr=array.length;
+		for(int i=0;i<=array.length-2;i++) {
+			int check1=(arr-i)-array[i];
+			
+		if (check1<=arr && check1>=0) {		
+			count++;
+		}
+		else {
+			return false;
+		}
+			
+		}
+		return count==arr-1;
+	}
+}
+class GetData{
+	void Datas() {
+		Scanner scan=new Scanner (System.in);
+		
+		try {
+		
+		System.out.print("Enter a size of array: ");
+		int sizeOfArray=scan.nextInt();
+		if( sizeOfArray<=0) {
+			throw new PositiveNumberException();
+		}
+		int[] Array=new int[sizeOfArray];
+		for(int i = 0; i <= Array.length - 1; i++) {
+			
+			System.out.print("Enter value "+(i+1 )+" array :");
+			Array[i]=scan.nextInt();
+		}
+		
+		System.out.println(Arrays.toString(Array));
+		Array array=new Array(Array);
+		System.out.println(array.checkCondition());
+		System.exit(0);
+		}
+		catch(PositiveNumberException a) {
+			System.out.println(a.getMessage());
+		}
+		finally {
+			scan.close();
+		}
+		
+	}
+}
+public class hi {
+	public static void main (String []args) {
+		new GetData().Datas();
+		
+			
+	}
+}
