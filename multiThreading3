@@ -1,0 +1,49 @@
+class Demo1 implements Runnable{
+	
+	public void run() {
+		System.out.println("user stack frame was start running");
+		for(int i=1; i<=5  ; i++) {
+			System.out.println("running");
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				//TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		System.out.println("finished");
+	}	
+}
+
+class demo23 implements Runnable{
+	public void run() {
+		System.out.println("haemen thread start execute");
+		for(;;) {
+			System.out.println("executing haeman");
+		}
+		
+	}
+}
+
+class demo34{
+	void run( ) {
+		System.out.println("main stack start executed");
+		Demo1 d=new Demo1();
+		demo23 d1= new demo23();		
+		Thread t=new Thread(d);
+		Thread t1=new Thread(d1);
+		t.start();
+		t1.setDaemon(true);			//change the haemen Thread.
+		t1.start();
+		System.out.println("main stack was finished");
+		
+	}
+}
+public class MultiThreading3 {
+	public static void main(String[] args) {
+		new demo34().run();
+		
+		
+	}
+
+}
