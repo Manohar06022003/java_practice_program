@@ -1,0 +1,59 @@
+	ExecutorService executor = Executors.newFixedThreadPool(3);		//in build function for multiThreading  
+		executor.execute(() -> run1());
+		executor.execute(() -> run2());
+		executor.execute(() -> run3());
+		
+	}
+	public void run1() {
+	
+		System.out.println("typing started");
+		for(int i=1 ; i<=5 ; i++ ) {
+			System.out.println("typing");
+			try {
+				Thread.sleep(2000);
+			}
+			catch(Exception e){
+				System.out.println();
+		}
+	}
+}
+	
+	public  void run2() {
+		System.out.println("completing the code");
+			while(true) {
+				System.out.println("completing");
+				try {
+					Thread.sleep(2000);
+		} 
+				catch (InterruptedException e) {
+					e.printStackTrace();
+		}
+	}
+}
+		public void run3() {
+			System.out.println("start saving");
+			while(true) {
+				System.out.println("saving");
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}	
+		}
+}
+
+class sample56{
+	void sample() {
+			
+			key123 key = new key123();
+			key.run();
+	}	
+}
+public class MultiThreading6 {
+	public static void main(String[] args) {
+		new sample56().sample();
+		
+	}
+
+}
