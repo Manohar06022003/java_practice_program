@@ -1,0 +1,64 @@
+package com.Multithreading;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+class printer implements Runnable{
+	
+	synchronized public void boy() {
+		System.out.println("boys are printing");
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		}
+	}
+	public void girl() {
+		
+		System.out.println("girls are printing");
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+		
+			e.printStackTrace();
+		}
+	}
+
+	public void others() {
+		System.out.println("others are printing");
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		}
+	}
+	
+	public void run() {
+	
+	}
+}
+
+class execute2 {
+	 public void execute1() {
+		printer print = new printer();
+		ExecutorService Executor=Executors.newFixedThreadPool(3);
+		for(int i=0 ; i <= 2 ; i++) {
+			
+			Executor.execute(() ->print.boy());
+			Executor.execute(() -> print.girl());
+			Executor.execute(() -> print.others());
+		
+		}
+		Executor.shutdown();
+		
+	}	
+}
+public class MultiThreading9 {
+	public static void main(String[] args) {
+		new execute2().execute1();
+		
+	}
+
+}
