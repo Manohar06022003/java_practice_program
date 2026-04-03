@@ -1,0 +1,92 @@
+package com.Multithreading;							//deadlock solution
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+class Deadlock1 implements Runnable{
+	String Resource1, Resource2;
+	
+	Deadlock1(String Resource1, String Resource2){
+		this .Resource1=Resource1;
+		this .Resource2=Resource2;
+
+	}
+	
+	 public void run() {
+		
+		ExecutorService Executor = Executors.newFixedThreadPool(3);
+		Executor.execute(() -> demo1(Resource1));
+		Executor.execute(() -> demo2(Resource2));
+		Executor.shutdown();
+		
+	}
+	public void  demo1(String Resource1) {
+		
+		synchronized (Resource1) {
+	
+		System.out.println("person 1 one got "+Resource1);
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		}
+		synchronized (Resource2) {
+			
+			System.out.println("person 1 one got "+Resource2);
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				
+				e.printStackTrace();
+			}
+		}
+		
+	}
+}
+	 public void demo2(String Resource2) {
+		synchronized (Resource1) {
+		
+		System.out.println("person 2 one got "+Resource1);
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		}
+		synchronized (Resource2) {
+		
+			System.out.println("person 2 one got "+Resource2);
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				
+				e.printStackTrace();
+			}
+		}
+	}
+
+}
+}
+
+class classCall1{
+	
+	void method(String s1,String s2) {
+		
+		Deadlock1 Dl = new Deadlock1(s1,s2);
+		Dl.run();
+	
+	}
+
+}
+
+public class MultiThreadingDeadlock2 {
+public static void main(String[] args) {
+		
+		String s1="tv";
+		String s2="PlayStation";
+		new classCall1().method(s1,s2);
+		
+	}
+
+}
