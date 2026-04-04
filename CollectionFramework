@@ -1,0 +1,140 @@
+package com.Collections;
+
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.PriorityQueue;
+import java.util.TreeSet;
+
+class demoException extends Exception{
+	demoException(){
+		super("its throw the demmoException");
+	}
+}
+class mano{
+	void hari() {
+		try {
+			int a=5,b=5;
+			int c=a+b;
+			throw new demoException();
+		}
+		catch( demoException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+}
+class collection{
+	void demo() {
+		ArrayList<Integer> array =new ArrayList<>();
+		array.add(39);
+		array.add(340);
+		array.add(34);
+		array.add(1,50);
+		array.add(10);
+		// ***********//
+		
+		LinkedList<Integer> array1 =new LinkedList<>();
+		array1.add(10);
+		array1.add(20);
+		array1.add(20);
+		array1.addAll(array);
+		
+		System.out.println(array);
+		System.out.println(array1);
+		System.out.println(array.get(3));
+		System.out.println(array1.get(1));
+		System.out.println(	array1.subList(0, 3));	// this is used for  group of array value 
+		System.out.println(array1.indexOf(10));
+		System.out.println(array1.lastIndexOf(10));
+		
+		array.remove(3);
+		array.remove(new Integer(20));
+		array.retainAll(array1);
+		array1.push(20);
+		array1.push(30);
+		
+		System.out.println(array1.pop());			
+		System.out.println(array1.pop());
+		
+		// ***********//
+		ArrayDeque<Integer> array2 =new ArrayDeque<>();		//ArrayDeque class
+		
+		array2.push(20);
+		array2.push(30);
+		array2.push(20);
+		array2.push(30);
+		
+		System.out.println(array2.pop());			
+		System.out.println(array2.pop());
+		System.out.println(array2.pollFirst());			//queue format for retrive the data 
+		System.out.println(array2.pollLast());
+		
+		array2.add(10);
+		array2.add(20);
+		array2.add(20);
+		array2.addAll(array1);
+		System.out.println(array2);
+		// ***********//
+		
+		PriorityQueue<Integer> array3 =new PriorityQueue<>();
+		 
+		array3.add(10);
+		array3.add(20);
+		array3.add(20);
+		array3.add(10);
+		array3.add(20);
+		array3.add(20);
+		System.out.println(array3);
+		System.out.println(array3.contains(20));
+		// ***********//
+		
+		TreeSet<Integer> t =new  TreeSet<>();
+		t.add(10);
+		t.add(30);
+		t.add(300);
+		t.add(23);
+		t.add(234);
+		t.add(190);
+		t.add(250);
+		t.add(123);
+		System.out.println(t);
+		System.out.println(t.contains(234));
+		// ***********//
+		
+		HashSet<Integer> h = new HashSet<>();			// single searching process.
+		h.add(10);
+		h.add(30);
+		h.add(300);
+		h.add(23);
+		h.add(234);
+		h.add(190);
+		h.add(250);
+		h.add(123);
+		System.out.println(h);
+		System.out.println(h.contains(234));
+		
+		// ***********//
+		
+		LinkedHashSet<Integer> l =new LinkedHashSet<>();	//	Advanced LinkedHashSet , it give a output as order input.single searching process. 
+		l.add(10);
+		l.add(30);
+		l.add(300);
+		l.add(23);
+		l.add(234);
+		l.add(190);
+		l.add(250);
+		l.add(123);
+		System.out.println(l);
+		System.out.println(l.contains(234));
+			}	
+}
+
+public class collection1 {
+	public static void main(String[] args) {
+		new collection().demo();
+	
+	}
+
+}
