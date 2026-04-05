@@ -1,0 +1,196 @@
+package com.Collections;
+
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.PriorityQueue;
+import java.util.TreeSet;
+
+class ArrayList1{
+	void array1() {
+		
+		ArrayList<Integer> array1 = new ArrayList<>();
+		array1.add(10);
+		array1.add(20);
+		array1.add(30);
+		array1.add(40);
+		array1.add(50);
+		array1.add(60);
+		array1.add(70);
+		for(int taker : array1) {
+			System.out.println(taker);
+		}
+		System.out.println(array1.contains(50));
+		Iterator mouse = array1.iterator();		//	Iterator method
+		while(mouse.hasNext()) {
+			System.out.println(mouse.next());
+		}
+	}
+}	
+
+class linkedList1{
+	void List() {
+		
+		LinkedList<Integer> list = new LinkedList<>();
+		list.add(10);
+		list.add(20);
+		list.add(30);
+		list.add(40);
+		list.add(50);
+		for(int taker : list) {
+			System.out.println(list);
+		}
+		System.out.println(list.contains(40));
+		Iterator mouse = list.iterator();		//	Iterator method
+		Iterator mouse1 = list.listIterator(2); // list Iterator method
+		while(mouse.hasNext()) {
+			System.out.println(mouse.next());
+		}
+		
+	}	
+}
+class ArrayDeque1{
+	
+	void deque() {
+		
+		ArrayDeque<Integer> deque = new ArrayDeque<>();
+		deque. add(30);
+		deque.add(40);
+		deque.add(50);
+		deque.add(60);
+		int[] array = new int[deque.size()];
+		int i=0;
+		for (int taker : deque) {
+			array[i]=taker;
+			i++;
+		}
+		for(int taker : array) {
+			System.out.println(taker);
+		}
+		Iterator mouse = deque.iterator();
+		while(mouse.hasNext()) {
+			System.out.println(mouse.next());
+		}
+	}	
+}
+
+class PriorityQueue1{
+	
+	void queue(){
+		
+		PriorityQueue<Integer> queue1 = new PriorityQueue<>();
+		queue1.add(10);
+		queue1.add(20);
+		queue1.add(30);
+		queue1.add(40);
+		queue1.add(50);
+		queue1.add(60);
+		for(Object taker : queue1)	{			//we cannot access by for loop  
+			
+		System.out.println(taker);
+		
+		}
+		Iterator mouse = queue1.iterator();
+		while(mouse.hasNext()) {
+			System.out.println(mouse.next());
+		}
+	}	
+}
+
+class TreeSet1{
+	
+	void set() {
+		
+		TreeSet t =new TreeSet();
+		t.add(100);
+		t.add(200);
+		t.add(500);
+		t.add(300);
+		t.add(600);
+		
+		for(Object taker : t) {	
+		System.out.println(taker);
+		}
+		Iterator mouse = t.iterator();
+		while(mouse.hasNext()) {
+			System.out.println(mouse.next());
+		}
+		
+	}	
+}
+
+class hashing1{
+	void List() {
+		
+		HashSet hash = new HashSet<>();
+		hash.add(10);
+		hash.add(20);
+		hash.add(30);
+		hash.add(40);
+		hash.add(50);
+		for(Object taker : hash) {
+			System.out.println(taker);
+		}
+		System.out.println(hash.contains(40));	
+		Iterator mouse = hash.iterator();
+		while(mouse.hasNext()) {
+			System.out.println(mouse.next());
+		}
+	}	
+}
+
+class LinkedHashSet1{
+	void hashset() {
+		
+		LinkedHashSet hash = new LinkedHashSet();
+		
+		hash.add(10);
+		hash.add(20);
+		hash.add(30);
+		hash.add(40);
+		hash.add(50);
+		for(Object taker : hash) {
+			System.out.println(taker);
+		}
+		Iterator mouse = hash .iterator();
+		while(mouse.hasNext()) {
+			System.out.println(mouse.next());
+		    }
+		}	
+}
+
+class executor2{
+	
+}
+
+class executor1{
+	
+	void executor() {
+		 ArrayList1 array = new  ArrayList1();
+		 array.array1();
+		 linkedList1 link = new linkedList1();
+		 link.List();
+		 ArrayDeque1 array1 = new ArrayDeque1();
+		 array1 .deque();
+		 PriorityQueue1 queue = new  PriorityQueue1();
+		 queue.queue();
+		 TreeSet1 tree = new TreeSet1();
+		 tree.set();
+		 hashing1 hash = new hashing1();
+		 hash.List();
+		 LinkedHashSet1 linkedhash = new LinkedHashSet1();
+		 linkedhash.hashset();
+		
+	}
+	
+}
+public class collectionSearchingProceesArrayList {
+	public static void main(String[] args) {
+		new executor1().executor();
+		
+	}
+
+}
