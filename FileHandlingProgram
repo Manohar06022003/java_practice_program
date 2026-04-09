@@ -56,7 +56,7 @@ class ReaderTheFile{
 		try {
 			
 			FileReader f1= new FileReader("D:\\folder1\\file.txt");
-			int c=f1.read();
+			int c=f1.read();			//f1.read()--> this method read the file by single charcter and give the out in ASCII values.
 			while(c != -1) {
 								
 				System.out.print((char)c);
