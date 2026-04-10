@@ -1,0 +1,112 @@
+package com.FileHandling;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+class CreateFile{
+	
+	void File1() {
+		
+		try {			
+		
+		File f1= new File ("D:\\ManoFolder2");
+		f1.mkdir();
+		
+		File f2 = new File ("D:\\ManoFolder2\\Mano.txt");
+		f2.createNewFile();
+		}
+		catch(Exception a) {
+			a.printStackTrace();
+		}
+	}	
+}
+
+class WriteFile{
+	Scanner scan = new Scanner (System.in);
+	
+	void write() {
+		
+		try {
+			
+			FileWriter Write= new FileWriter("D:\\ManoFolder2\\Mano.txt",true);
+			System.out.print("Start Write : ");
+			String h = scan.nextLine();
+			Write.write(h+"\n");
+			Write.close();
+			
+		}
+		catch(Exception b){
+			
+			b.printStackTrace();
+			
+		}		
+	}	
+}
+
+class ReadFile{
+	
+	int count1=0;
+	int count2=0;
+	FileReader reader = null ;
+	FileReader reader2= null;
+	BufferedReader reader1= null;
+	String s = null;
+	int c;
+	
+	
+	void read() {
+				
+		try {
+			
+		    reader = new FileReader("D:\\ManoFolder2\\Mano.txt");
+			reader1 = new BufferedReader(reader);
+			reader2 = new FileReader("D:\\ManoFolder2\\Mano.txt");
+			s = reader1.readLine();
+			while(s != null) {
+				
+				System.out.println(s);
+				s = reader1.readLine();
+				count1++;
+				
+		}
+			
+			System.out.println(count1);
+			c=reader2.read();
+			while (c != -1 && c!= '\r') {				
+				if (c != '\n') {
+					count2++;
+				}
+
+				c=reader2.read();				
+			}			
+		}
+		catch(Exception c) {
+			
+			c.printStackTrace();
+			
+		}
+		System.out.println( "no.of . characters= "+count2);
+		try {
+			reader2.close();
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+	}	
+}
+
+public class FileHandling3 {
+	public static void main (String [] args) {
+		
+		new CreateFile().File1();
+		new WriteFile().write();
+		new ReadFile().read();
+		
+	}
+
+}
+
