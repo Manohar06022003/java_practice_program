@@ -1,0 +1,133 @@
+package com.FileHandling;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+class CreateFile1{
+	
+	void File1() {
+		
+		try {			
+		
+		File f1= new File ("D:\\ManoFolder3");
+		f1.mkdir();
+		
+		File f2 = new File ("D:\\ManoFolder3\\a.txt");
+		f2.createNewFile();
+		File f3 = new File ("D:\\ManoFolder3\\b.txt");
+		f3.createNewFile();
+		File f4 = new File ("D:\\ManoFolder3\\c.txt");
+		f4.createNewFile();
+		
+		}
+		catch(Exception a) {
+			a.printStackTrace();
+		}
+	}	
+}
+
+class WriteFile1{
+	 Scanner scan= new Scanner(System.in);
+    public static int n;
+	
+	void FileA() {
+		try {
+			FileWriter f1 = new FileWriter("D:\\ManoFolder3\\a.txt");
+			 n= scan.nextInt();
+			String array[] = new String[n];
+			scan.nextLine();
+			for (int i =0 ; i <= array.length-1 ;i++) {
+				
+				System.out.print(" enter your name "+(i+1) + " : ");
+				
+				String record = scan.nextLine();
+				array[i] =record;
+				 f1.write(record+"\n");
+				
+			}
+			f1.close();
+			FileB();
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+	void FileB() {
+		try {
+			FileWriter f2 = new FileWriter("D:\\ManoFolder3\\b.txt");
+			int array[] = new int[n];
+			
+			for (int i =0 ; i <= array.length-1 ;i++) {
+			
+				System.out.print(" enter your number "+(i+1) + " : ");
+				int record = Integer.parseInt(scan.nextLine());
+				array[i] =record;
+				 f2.write(record+"\n");
+				
+			}
+			f2.close();
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+			
+		}		
+	}
+	public static void FileC(String s,int number) {
+		
+		try {
+			
+			FileWriter f3 = new FileWriter("D:\\ManoFolder3\\c.txt", true);
+			f3.write(s + " : " +number +"\n");
+			f3.close();
+			
+		} 
+		catch (IOException e) {
+			
+			e.printStackTrace();
+			
+		}
+	}
+}
+
+class ReadFile1{
+	void FileC() {
+		
+		try {
+			
+			FileReader f1 = new FileReader("D:\\ManoFolder3\\a.txt");
+			BufferedReader Buffer1 = new BufferedReader(f1);
+			FileReader f2 = new FileReader("D:\\ManoFolder3\\b.txt");
+			BufferedReader Buffer2 = new BufferedReader(f2);
+			String s;
+			String numbers;
+			
+			while((s=Buffer1.readLine()) != null && (numbers= Buffer2.readLine()) != null) {
+				
+				int number =Integer.parseInt(numbers);
+				WriteFile1.FileC(s, number);
+											
+			}			
+		}
+		catch (Exception e) {
+			
+			e.printStackTrace();
+			
+		}
+	}
+}
+public class FileHandling4 {
+	public static void main(String[] args) {
+		
+		new CreateFile1().File1();
+		new WriteFile1(). FileA();
+		new ReadFile1().FileC(); 
+		
+	}
+
+}
