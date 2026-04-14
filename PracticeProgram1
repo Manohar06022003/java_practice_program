@@ -1,0 +1,42 @@
+package practiceSessecion2pratice1;
+
+import java.util.Scanner;
+
+class ReverseString{
+	String a;
+	String b;
+	
+	ReverseString(String a){
+		
+		this.a= a;
+	}
+	
+	void demo1() {
+		
+		b=a.toLowerCase();
+		int c= a.length();
+		StringBuffer String1= new StringBuffer();
+		
+		for (int i =c-1 ; i>=0 ;i--) {
+			
+			String1.append(a.charAt(i));
+			
+		}
+		
+		String1.trimToSize();
+		System.out.println(String1);
+		System.out.println(String1.length());
+	}
+
+}
+public class program1 {
+	public static void main(String [] args) {
+		
+		Scanner scan = new Scanner (System.in);
+		String a = scan.nextLine();
+		ReverseString r= new ReverseString(a);
+		r.demo1();
+		
+	}
+
+}
