@@ -1,0 +1,80 @@
+package com.practiceSession;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+class CheckArray{
+	
+	int [] array ;
+	int sizeOfArray;
+	int BiggestValue = 0;
+	Scanner scan = new Scanner (System.in);
+	
+	CheckArray(int sizeOfArray){
+		
+		this.sizeOfArray = sizeOfArray;
+		
+	}
+	
+	void getData() {
+		
+		try {
+			array = new int[sizeOfArray];
+			int a = array.length;
+			
+			for (int i =0 ; i < a ; i++) {
+				
+				System.out.print("Enter the value of array 's "+(i+1)+" : ");
+				array[i]=scan.nextInt();
+				
+			}
+			processData();
+		}
+		catch(InputMismatchException a) {
+			
+			System.out.println("Enter the Numbers only 😊😊😊");
+		}
+	}
+	
+	void processData() {
+		
+		
+		
+		for(int i : array) {
+			
+			if (i > BiggestValue ) {
+				
+				BiggestValue = i;
+			}
+		}
+		System.out.print("Biggest value of array is : "+BiggestValue);
+	}
+}
+
+class Check{
+	
+	Scanner scan = new Scanner (System.in);
+	
+	void checkData() {
+		
+		try {
+			
+		System.out.print("Enter the size of array : ");
+		int size = scan.nextInt();
+		CheckArray check = new CheckArray(size);
+		check.getData();
+		
+		}
+		catch (Exception e) {
+			
+			e.printStackTrace();
+			
+		}
+	}
+}
+public class PracticeProgram1 {
+	public static void main (String [] args) {
+		
+		new Check().checkData();
+	}
+}
