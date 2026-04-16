@@ -1,0 +1,88 @@
+package com.practiceSession;
+
+import java.util.Scanner;
+
+class InvalidInputException extends Exception{
+	
+	InvalidInputException(){
+		
+		super("Enter a alphabets only✨");
+		
+	}
+}
+class PalindromeProgram{
+	
+	String Word1;
+	String Word2;
+	int a,b,count=0;
+	char c1,c2;
+	PalindromeProgram(String Word1){
+		
+		this.Word1= Word1;
+		
+	}
+	
+	void checkData() {
+		
+		boolean palindrome = true;
+		Word2= Word1.toLowerCase();
+		a=Word2.length()-1;
+		b = Word2.length()-1;
+		
+		for(int i = 0 ; i <= a/2 ; i++) {
+			
+			c1=Word2.charAt(i);
+			c2=Word2.charAt(b);
+			
+			if(c1==c2) {
+				
+				b--;
+				
+			}
+			else {
+				System.out.println("It is not palindrome");
+				palindrome =false;
+				break;
+			}
+			
+		}
+		if( palindrome ) {
+			
+			System.out.println("It is palindrome");
+			
+		}		
+	}
+}
+
+class GetData1{
+	
+	Scanner scan = new Scanner(System.in);
+	
+	void getData1() {
+		try {
+			
+			System.out.print("Enter the word : ");
+			String Word = scan.nextLine();
+			
+			if (!Word.matches("[a-zA-Z]+")) {
+				
+				throw new InvalidInputException();
+			}
+			
+			 PalindromeProgram program = new  PalindromeProgram(Word);
+			 program.checkData();
+			 
+		}
+		catch(InvalidInputException a) {
+			
+			System.out.println(a.getMessage());
+		}
+	}
+}
+public class PracticeProgram4 {
+	public static void main (String[] args) {
+		
+		new GetData1().getData1();
+	}
+
+}
