@@ -59,24 +59,13 @@ class GetData1{
 	Scanner scan = new Scanner(System.in);
 	
 	void getData1() {
-		try {
 			
 			System.out.print("Enter the word : ");
 			String Word = scan.nextLine();
-			
-			if (!Word.matches("[a-zA-Z]+")) {
-				
-				throw new InvalidInputException();
-			}
-			
+			String word = Word.replaceAll("[^a-zA-Z]", "");
 			 PalindromeProgram program = new  PalindromeProgram(Word);
 			 program.checkData();
 			 
-		}
-		catch(InvalidInputException a) {
-			
-			System.out.println(a.getMessage());
-		}
 	}
 }
 public class PracticeProgram4 {
