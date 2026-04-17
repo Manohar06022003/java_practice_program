@@ -1,0 +1,70 @@
+package com.practiceSession;
+
+import java.util.HashSet;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+class DeleteDuplicate{
+	
+	int []Array1;
+	HashSet<Integer> Array2 = new HashSet<>();			// hashset for remove the duplicate the values in array.
+	int a;
+	
+	DeleteDuplicate(int []Array1){
+		
+		this.Array1=Array1;
+		
+	}
+	 void ProcessData1() {
+		 
+		for ( int i : Array1) {
+			
+			Array2.add(i);
+			
+		}
+		System.out.println(Array2);
+	 }
+}
+
+class GetInputs{
+	
+	Scanner scan = new Scanner (System.in);
+	
+	int array[];
+	int a,b;
+	
+	void getInput() {
+		
+		try {
+			
+			System.out.print("Enter the size of array : ");
+			a= scan.nextInt();
+			array = new int [a];
+			
+			for (int i =0 ; i < array.length ; i++) {
+				
+				System.out.print("Enter the "+(i+1) +"value of array : ");
+				array[i]=scan.nextInt();
+				
+			}
+			
+			DeleteDuplicate duplicate= new DeleteDuplicate(array);
+			duplicate. ProcessData1() ;
+		}
+		catch(InputMismatchException e) {
+			
+			e.printStackTrace();
+			}
+		catch (Exception b) {
+			b.printStackTrace();
+		}
+	}
+	
+}
+public class PracticeProgram5 {
+	public static void main (String []args) {
+		
+		 new GetInputs().getInput();
+	}
+
+}
