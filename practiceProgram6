@@ -1,0 +1,201 @@
+package com.practiceSession;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+class InvalidException1 extends Exception {
+	InvalidException1(){
+		
+		super("Name should be in alphats");
+		
+		}
+}
+class bankDetails{
+	
+	private String name;
+	private long accNo;
+	private long balance=1000;
+	
+	bankDetails(String name, long accNo){
+		
+		this.name = name;
+		this.accNo = accNo;
+		
+	}
+	String nameHolderGetter() {
+		
+		return name;
+		
+	}
+	long accNoGetter() {
+		
+		return accNo;
+	}
+	long balanceGetter() {
+		
+		return balance;
+	}
+	void depositAmount(long balance1) {
+		if(balance1 >0) {
+			
+		balance = balance1+balance;
+		System.out.println("Deposited successfully");
+		System.out.println("Available balance : " + balanceGetter() );
+		
+		}
+		else {
+			System.out.println("Invalid deposit amount .");
+		}
+		
+	}
+	void WithDraw(long amount) {
+		
+		
+		if (amount<=balance) {
+			
+			balance=balance-amount;
+			System.out.println("WithDraw is completed");
+			System.out.println("Available balance : " + balanceGetter() );
+			
+		}
+		else {
+			System.out.println("Insufficent balance");
+		}
+	}
+}
+
+class functionOfBank extends bankDetails{
+	
+	Scanner scan = new Scanner (System.in);
+
+	functionOfBank(String name, long accNo) {
+		super(name, accNo );
+		
+	}
+	
+	void deposit() {
+		try {
+			
+			System.out.print("Enter a deposit Amount : ");
+			long amount= scan.nextLong();
+			depositAmount(amount);
+			
+		}
+		catch(InputMismatchException e) {
+			
+			e.printStackTrace();
+			System.out.println("Enter only numbers");
+			
+		}
+	}
+	
+	void withDraws() {
+		
+		try {
+			
+			System.out.print("Enter  a withDraw amount : ");
+			long amount = scan.nextLong();
+			WithDraw(amount);
+		}
+		catch(InputMismatchException a) {
+			
+			System.out.println("Enter only numbers");
+		}
+	}
+	
+	void detailAccountHolder() {
+		
+		nameHolderGetter();
+		accNoGetter();
+		balanceGetter();
+		
+	}
+}
+
+class getDetailsAccount extends functionOfBank{
+	
+	getDetailsAccount(String name, long accNo) {
+		
+		super(name, accNo );
+	
+	}
+
+	void depositTransaction() {
+		
+		 deposit() ;
+		 
+	}
+	
+	void withdrawalTransaction() {
+		
+		 withDraws();
+		 
+	}
+	
+	void display() {
+		
+		System.out.println("Account Holder name : "+nameHolderGetter());
+		System.out.println("Account Holder accNo : "+accNoGetter());
+		System.out.println( "Account balance : "+balanceGetter());
+	}
+}
+
+class getData1{
+	
+	Scanner scan = new Scanner (System.in);
+	String name ;
+	long accNo ;
+	
+		getData1(){
+			
+			while(true) {
+			
+				try {
+					
+				System.out.print("Enter your name : ");
+				name = scan.nextLine();
+				if (!name.matches("[a-zA-Z]+")) {
+					
+					throw new InvalidException1();
+				}
+				
+				System.out.print("Enter your accNo : ");
+				accNo = scan.nextLong();
+				break;
+				
+				}
+				catch(InvalidException1 b) {
+					
+					System.out.println(b.getMessage());
+					
+				}
+				catch(InputMismatchException e) {
+					
+					System.out.println("Number only");
+					
+				}
+				catch (Exception d) {
+					
+					d.printStackTrace();
+				}
+			}
+	}
+		
+		void callFunction() {
+			
+			getDetailsAccount getDetails = new getDetailsAccount(name , accNo);
+			
+			getDetails.depositTransaction();
+			getDetails.withdrawalTransaction();
+			getDetails.display();
+			
+		}
+}
+public class PracticeProgram6 {
+	public static void main(String[] args) {
+		
+		 getData1 getData = new  getData1();
+		 getData.callFunction();
+	
+	}
+}
