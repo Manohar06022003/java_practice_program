@@ -1,0 +1,104 @@
+package com.practiceSession;
+
+class verify{
+	
+	void verifys1(vehicles v) {
+		
+		v.start();
+		
+		if (v instanceof car) {
+			
+			car Car=(car)v;
+			Car.wheels();
+			Car.carEngine();
+			
+		}
+		v.engineOff();
+		System.out.println("**************");
+		
+	}
+	
+	void verifys2(vehicles v) {
+		
+		v.start();
+		
+		if (v instanceof bike) {
+			
+			bike Bike = (bike) v;
+			Bike.wheels();
+			Bike.bikeEngine();
+			
+		}
+		v.engineOff();
+		System.out.println("**************");
+		
+	}
+}
+class vehicles{
+	
+	void start() {
+		
+		System.out.println("Engine started");
+		
+	}
+	void engineOff(){
+		
+		System.out.println("Engine shutdown");
+		
+	}
+}
+
+class car extends vehicles{
+
+	void start() {
+		
+		System.out.println("car Engine start with key.");
+		
+	}
+	void wheels() {
+		
+		System.out.println("car has a 4 wheels.");
+	}
+	void carEngine() {
+		
+		System.out.println("car has a big engine.");
+	}
+}
+
+class bike extends vehicles{
+
+	void start() {
+		
+		System.out.println("bike Engine start with kick.");
+		
+	}
+	void wheels() {
+		
+		System.out.println("car has a 2 wheels.");
+		
+	}
+	void bikeEngine() {
+		
+		System.out.println("car has a small engine.");
+		
+	}
+}
+
+class accessVehicles{
+	
+	void access() {
+		
+		vehicles Vehicle1=new car();
+		vehicles Vehicle2=new bike();
+		 verify Verify=new  verify();
+		 Verify.verifys1(Vehicle1);
+		 Verify.verifys2(Vehicle2);
+		 Verify.verifys1(new bike());
+	}
+}
+public class PracticeProgram7 {
+	public static void main(String[] args) {
+		
+		new accessVehicles().access();
+	}
+}
