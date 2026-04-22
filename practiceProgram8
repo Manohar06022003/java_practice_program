@@ -1,0 +1,58 @@
+package practiceSeccession;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Scanner;
+
+class studenList{
+	
+	Scanner scan = new Scanner (System.in);
+	ArrayList<String> array;
+	int a=1;
+	
+	void list() {
+		
+		array = new ArrayList<>();
+		
+		while(true) {
+			
+			System.out.print("Enter the "+a+" name : ");
+			String name= scan.nextLine();
+			
+			if(name.equalsIgnoreCase("exit")) {
+				break;
+			}
+			array.add(name);
+			a++;
+		}
+	
+	}
+	
+	void printList() {
+		
+		Iterator<String> it =array.iterator();
+		
+		while(it.hasNext()) {
+			
+			String value =it.next();
+			System.out.println(value);
+		}
+	}
+}
+
+class printList{
+	
+	void list() {
+		
+		studenList list= new studenList();
+		list.list();
+		list.printList();
+	}
+}
+public class practiceSession7 {
+	public static void main(String[] args) {
+		
+		new printList().list();
+	}
+
+}
